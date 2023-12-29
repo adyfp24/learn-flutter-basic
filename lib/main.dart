@@ -9,14 +9,32 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Hello Ady App',
-            style: TextStyle(color: Colors.white),
+        body: Center(
+          child: Column(
+            children: [SearchWidget(), SimpleBottomNavigation()],
           ),
         ),
-        body: SimpleBottomNavigation(),
       ),
+    );
+  }
+}
+
+class SearchWidget extends StatelessWidget {
+  const SearchWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Text('Sportify'),
+      actions: [
+        IconButton(
+          onPressed: () {
+            // Tambahkan logika atau navigasi pencarian di sini
+            print('Search button tapped');
+          },
+          icon: Icon(Icons.search),
+        ),
+      ],
     );
   }
 }
@@ -35,33 +53,34 @@ class _SimpleBottomNavigationState extends State<SimpleBottomNavigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text("Selected Page: ${_navBarItems[_selectedIndex].label}"),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(width: 10),
-                DropdownButton<BottomNavigationBarType>(
-                  hint: Text(_bottomNavType.toString()),
-                  items: BottomNavigationBarType.values
-                      .map((item) => DropdownMenuItem(
-                          value: item, child: Text(item.toString())))
-                      .toList(),
-                  onChanged: (val) {
-                    if (val == null) return;
-                    setState(() {
-                      _bottomNavType = val;
-                    });
-                  },
-                ),
-              ],
-            )
-          ],
-        ),
+      appBar: AppBar(
+        title: const Text('Your App Title'),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("Selected Page: ${_navBarItems[_selectedIndex].label}"),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(width: 10),
+              DropdownButton<BottomNavigationBarType>(
+                hint: Text(_bottomNavType.toString()),
+                items: BottomNavigationBarType.values
+                    .map((item) => DropdownMenuItem(
+                        value: item, child: Text(item.toString())))
+                    .toList(),
+                onChanged: (val) {
+                  if (val == null) return;
+                  setState(() {
+                    _bottomNavType = val;
+                  });
+                },
+              ),
+            ],
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
