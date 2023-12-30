@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LatihansStateless extends StatelessWidget {
-  const LatihansStateless({Key? key}) : super(key: key);
+class LatihanStateless extends StatelessWidget {
+  const LatihanStateless({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -46,11 +46,20 @@ class LatihansStateless extends StatelessWidget {
             label: 'Home',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.mail),
+            label: 'Email',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.call),
+            label: 'Call',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Settings',
           ),
         ],
         backgroundColor: Colors.greenAccent[100],
+        type: BottomNavigationBarType.fixed,
       ),
     )));
   }
