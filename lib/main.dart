@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bismillah/statefull.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(LatihanStateful());
 }
 
 class MyApp extends StatelessWidget {
@@ -12,17 +13,19 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blueGrey[50],
-          title: Text('aplikasi ady', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,fontStyle: FontStyle.italic, fontFamily: 'Roboto', color: Colors.blue[100])),
+          title: Text('aplikasi ady', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 27.5, fontFamily: 'Poppins', color: Colors.blue[100])),
         ),
         body: Center(
           child: Column(
             children: [Container(
-              width: 20,
-              height: 20,
-              margin: EdgeInsets.all(10),
+              color: Colors.deepOrange,
+              width: 200,
+              height: 100,
+              padding: EdgeInsets.all(10.0),
             ), Container(
-              width: 20,
-              height: 20,
+              color: Colors.deepPurple,
+              width: 200,
+              height: 100,
               margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
             )],
           ),
