@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_bismillah/statefull.dart';
+//import 'package:flutter_bismillah/statefull.dart';
+import 'package:flutter_bismillah/stateless.dart';
 
 void main() {
-  runApp(LatihanStateful());
+  runApp(LatihansStateless());
 }
 
 class MyApp extends StatelessWidget {
